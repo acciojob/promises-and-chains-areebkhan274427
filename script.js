@@ -10,8 +10,9 @@ var promise= new Promise((resolve,reject)=>{
         var age=ageElement.value;
         var name=nameElement.value;
 
-		 if(!(name&&age)){
-			 alert("Please enter valid details")
+		 if(!(name||age)){
+			 alert("Please enter valid details");
+			 return;
 		 }
 		 
        if(age<18){
@@ -29,7 +30,7 @@ function call(){
 }
 
 
-function myFunction() {
+function myFunction(e) {
    call().then(function(data){
        alert(data);
    }).catch(function(data){
